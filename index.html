@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Meeting Minutes : With User Input!</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        ▁-▁-▁-▁-▁-▁-▁-▁-▁-▁-▁-▁-▁
+        <h1>Meeting Minutes</h1>
+        ▁-▁-▁-▁-▁-▁-▁-▁-▁-▁-▁-▁-▁
+    </header>
+    <br>
+    <form>
+        <fieldset>
+            <legend>Meeting Input Form</legend>
+
+            <section>
+                <hgroup>
+                    <h3>Title</h3>
+                    <input type="text" placeholder="Meeting Title">
+                    <span></span>
+                </hgroup>
+                -----------------------------------------------
+            </section>
+
+            <section>
+                <hgroup>
+                    <h3>Subtitle</h3>
+                    <input type="text" placeholder="Meeting Subtitle">
+                </hgroup>
+                -----------------------------------------------
+            </section>
+
+            <section>
+                <hgroup>
+                    <h3>Date</h3>
+                    <input type="date" placeholder="Meeting Date">
+                </hgroup>
+                <br>
+                ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
+            </section>
+
+            <section>
+                <h4>Attendance List</h4>
+                <textarea title="List">name 1, name 2, name 3</textarea>
+                <br><br>
+                ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
+                <br>
+            </section>
+
+            <section>
+                <h4>Agenda</h4>
+                <textarea title="Agenda" placeholder="Our agenda for today's meeting is: "></textarea>
+                <br><br>
+                ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
+                <br>
+            </section>
+
+            <div>
+                <br>
+                <datalist id="projects">
+                    <option value="Project A"></option>
+                    <option value="Project B"></option>
+                </datalist>
+                <input list="projects" placeholder="Select a project">
+                <br><br>
+                <select title="Review Type">
+                    <option>Monthly</option>
+                    <option>Quarterly</option>
+                    <option>Annual</option>
+                </select>
+                <button type="submit">Submit Details</button>
+            </div>
+            <br>
+            <details>
+                <summary>More on This Meeting</summary>
+                <p>This part can contain more relevant info...</p>
+                <ul>
+                    <li>Bulleted List</li>
+                </ul>
+                <ol>
+                    <li>List</li>
+                </ol>
+            </details>
+            <br>
+        </fieldset>
+    </form>
+
+    <footer>
+        <br>
+        ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
+        <br><br>
+        <strong>Meeting organized by <b>Team 3!</b></strong>
+        <p>Contact us at <em><a href="mailto:team3.gg">team3.gg</a></em></p>
+        ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
+    </footer>
+
+    <aside>
+        <h2>Attachments</h2>
+        <br><br>
+        <img src="./images/random.jpeg" alt="Meeting image">
+        <caption>Figure #1</caption>
+        <br>
+        <br>
+        <audio controls preload="none">
+            <!-- <source src="meeting_audio.ogg" type="audio/ogg">
+            <br> -->
+            <source src="/media/meeting.MP4" type="audio/mpeg">
+        </audio>
+        <br>
+        <video controls preload="none">
+            <source src="/media/meeting.MP4" type="video/mp4">
+        </video>
+    </aside>
+</body>
+
+</html>
