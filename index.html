@@ -19,27 +19,21 @@
             <legend>Meeting Input Form</legend>
 
             <section>
-                <hgroup>
-                    <h3>Title</h3>
-                    <input type="text" placeholder="Meeting Title">
-                    <span></span>
-                </hgroup>
-                -----------------------------------------------
+                <h3>Title</h3>
+                <input type="text" placeholder="Meeting Title">
+                <span></span>
+                <p>-----------------------------------------------</p>
             </section>
 
             <section>
-                <hgroup>
-                    <h3>Subtitle</h3>
-                    <input type="text" placeholder="Meeting Subtitle">
-                </hgroup>
-                -----------------------------------------------
+                <h3>Subtitle</h3>
+                <input type="text" placeholder="Meeting Subtitle">
+                <p>-----------------------------------------------</p>
             </section>
 
             <section>
-                <hgroup>
-                    <h3>Date</h3>
-                    <input type="date" placeholder="Meeting Date">
-                </hgroup>
+                <h3>Date</h3>
+                <input type="date">
                 <br>
                 ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
             </section>
@@ -61,7 +55,6 @@
             </section>
 
             <div>
-                <br>
                 <datalist id="projects">
                     <option value="Project A"></option>
                     <option value="Project B"></option>
@@ -83,7 +76,7 @@
                     <li>Bulleted List</li>
                 </ul>
                 <ol>
-                    <li>List</li>
+                    <li>Numbered List</li>
                 </ol>
             </details>
             <br>
@@ -103,17 +96,17 @@
         <h2>Attachments</h2>
         <br><br>
         <img src="./images/random.jpeg" alt="Meeting image">
-        <caption>Figure #1</caption>
         <br>
         <br>
         <audio controls preload="none">
-            <!-- <source src="meeting_audio.ogg" type="audio/ogg">
-            <br> -->
+            <!-- <source src="meeting_audio.ogg" type="audio/ogg"> -->
             <source src="./media/meeting.mp4" type="audio/mpeg">
+            Your browser does not support the audio element.
         </audio>
         <br>
         <video controls preload="none">
             <source src="./media/meeting.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
     </aside>
 </body>
