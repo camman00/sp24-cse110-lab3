@@ -1,114 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Meeting Minutes : With User Input!</title>
+    <title>Meeting Minutes</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+        :root {
+            --primary-bg-color: #FAFAFA;
+            /* Light grey background */
+            --primary-text-color: #212121;
+            /* Dark grey for text */
+            --secondary-text-color: #757575;
+            /* Medium grey for secondary text */
+            --divider-color: #BDBDBD;
+            /* Light grey for dividers */
+            --accent-color: #607D8B;
+            /* Blue grey for accenting elements */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            background-color: var(--primary-bg-color);
+            color: var(--primary-text-color);
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        header,
+        footer {
+            padding: 24px;
+            text-align: center;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            background-color: white;
+            margin: 2px 0;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 1px;
+        }
+        section:first-child {
+            margin-top: 20px !important;
+        }
+        footer:last-of-type {
+            margin-top: 20px !important;
+        }
+        input,
+        textarea,
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--divider-color);
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: var(--accent-color);
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            transition: background-color 0.3s;
+            background-color: #c9c9c9;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            left: 90vw;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 3px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            width: 40px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            body {
+                max-width: 1000px;
+                justify-content: center;
+                margin: 0 auto;
+                /* Set the maximum width of the body */
+            }
+        }
+    </style>
+    <script>
+        // JavaScript for "Back to Top" button
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </head>
 
 <body>
     <header>
-        ▁-▁-▁-▁-▁-▁-▁-▁-▁-▁-▁-▁-▁
         <h1>Meeting Minutes</h1>
-        ▁-▁-▁-▁-▁-▁-▁-▁-▁-▁-▁-▁-▁
     </header>
-    <br>
+
     <form>
-        <fieldset>
-            <legend>Meeting Input Form</legend>
+        <section>
+            <h2>Title</h2>
+            <input type="text" placeholder="Enter Meeting Title">
+        </section>
 
-            <section>
-                <h3>Title</h3>
-                <input type="text" placeholder="Meeting Title">
-                <span></span>
-                <p>-----------------------------------------------</p>
-            </section>
+        <section>
+            <h2>Subtitle</h2>
+            <input type="text" placeholder="Enter Meeting Subtitle">
+        </section>
 
-            <section>
-                <h3>Subtitle</h3>
-                <input type="text" placeholder="Meeting Subtitle">
-                <p>-----------------------------------------------</p>
-            </section>
+        <section>
+            <h2>Date</h2>
+            <input type="date">
+        </section>
 
-            <section>
-                <h3>Date</h3>
-                <input type="date">
-                <br>
-                ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
-            </section>
+        <section>
+            <h2>Attendance List</h2>
+            <textarea placeholder="List attendees here..."></textarea>
+        </section>
 
-            <section>
-                <h4>Attendance List</h4>
-                <textarea title="List">name 1, name 2, name 3</textarea>
-                <br><br>
-                ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
-                <br>
-            </section>
+        <section>
+            <h2>Agenda</h2>
+            <textarea placeholder="Describe the meeting agenda..."></textarea>
+        </section>
 
-            <section>
-                <h4>Agenda</h4>
-                <textarea title="Agenda" placeholder="Our agenda for today's meeting is: "></textarea>
-                <br><br>
-                ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
-                <br>
-            </section>
-
+        <section class="flex-container">
             <div>
+                <label for="projects">Select a project:</label>
+                <input list="projects" id="project-input" name="project-input" placeholder="Select a project">
                 <datalist id="projects">
                     <option value="Project A"></option>
                     <option value="Project B"></option>
                 </datalist>
-                <input list="projects" placeholder="Select a project">
-                <br><br>
-                <select title="Review Type">
+            </div>
+            <div>
+                <label>Review Type:</label>
+                <select>
                     <option>Monthly</option>
                     <option>Quarterly</option>
                     <option>Annual</option>
                 </select>
-                <button type="submit">Submit Details</button>
             </div>
-            <br>
-            <details>
-                <summary>More on This Meeting</summary>
-                <p>This part can contain more relevant info...</p>
-                <ul>
-                    <li>Bulleted List</li>
-                </ul>
-                <ol>
-                    <li>Numbered List</li>
-                </ol>
-            </details>
-            <br>
-        </fieldset>
+            <button type="submit">Submit Details</button>
+        </section>
     </form>
 
-    <footer>
-        <br>
-        ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
-        <br><br>
-        <strong>Meeting organized by <b>Team 3!</b></strong>
-        <p>Contact us at <em><a href="mailto:team3.gg">team3.gg</a></em></p>
-        ▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣
+    <footer class="grid-container">
+        <div>Organized by Team 3</div>
+        <div>Contact us at <a href="mailto:team3@example.com">team3@example.com</a></div>
+        <div>More about our projects <a href="#">here</a></div>
     </footer>
 
-    <aside>
-        <h2>Attachments</h2>
-        <br><br>
-        <img src="./images/random.jpeg" alt="Meeting image">
-        <br>
-        <br>
-        <audio controls preload="none">
-            <!-- <source src="meeting_audio.ogg" type="audio/ogg"> -->
-            <source src="./media/meeting.mp4" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <br>
-        <video controls preload="none">
-            <source src="./media/meeting.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </aside>
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
 </body>
 
 </html>
