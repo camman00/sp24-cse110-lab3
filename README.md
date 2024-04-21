@@ -1,3 +1,3 @@
 # README.md
-[text](https://camman00.github.io/Lab2_Starter/)
+[Link](https://camman00.github.io/sp24-cse110-lab3/)
 ^ LINK
