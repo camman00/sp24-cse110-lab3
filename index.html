@@ -63,7 +63,14 @@
             border-radius: 4px;
             margin-top: 10px;
         }
-
+        section:has(+ div) {
+            margin: 0 auto;
+        }
+        div {
+            & p {
+                justify-self: center;
+            }
+        }
         button {
             background-color: var(--accent-color);
             color: white;
@@ -113,21 +120,23 @@
             width: 40px;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .flex-container {
-                flex-direction: column;
-            }
-        }
 
-        @media (min-width: 1000px) {
-            body {
-                max-width: 1000px;
-                justify-content: center;
-                margin: 0 auto;
-                /* Set the maximum width of the body */
+        
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .flex-container {
+                    flex-direction: column;
+                }
             }
-        }
+
+            @media (min-width: 1000px) {
+                body {
+                    max-width: 1000px;
+                    justify-content: center;
+                    margin: 0 auto;
+                    /* Set the maximum width of the body */
+                }
+            }
     </style>
     <script>
         // JavaScript for "Back to Top" button
